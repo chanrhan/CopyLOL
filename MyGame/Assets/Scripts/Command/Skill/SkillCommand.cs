@@ -5,7 +5,7 @@ public class SkillCommand{
     public SkillCommand(SkillCode skillCode){
         this.skillCode = skillCode;
     }
-    public bool execute(PlayableUnit hero){
+    public bool execute(SkillController hero){
         SkillData sc = SkillManager.find(skillCode);
         if(currCoolDown == 0){
             if(sc.execute(hero)){

@@ -1,3 +1,3 @@
 public interface ICommand{
-    public bool execute(PlayableUnit hero);
+    public bool execute(SkillController hero);
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayableUnit : Unit{
+public class SkillController{
     public int mana;
 
     [SerializeField]
@@ -8,9 +8,7 @@ public class PlayableUnit : Unit{
 
     protected SkillCommand[] commands = null;
 
-    private void Awake() {
-        base.Awake();
-
+    public void Init() {
         commands = new SkillCommand[skillCodes.Length];
         for(int i=0;i<skillCodes.Length;++i){
             commands[i] = new SkillCommand(skillCodes[i]);

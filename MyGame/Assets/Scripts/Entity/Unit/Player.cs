@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Player : Unit {
     [SerializeField]
-    private PlayableUnit hero;
+    private SkillController skillContainer;
     
     private Inventory inventory;
 
     public void useSkill(int keyCode){
-        hero.UseSkill(keyCode);
+        skillContainer.UseSkill(keyCode);
     }
 }

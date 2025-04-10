@@ -65,21 +65,34 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.50f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Enums/EAbilityPreviewType.cs" />
     <Compile Include="Assets/Scripts/UI/UISlot.cs" />
     <Compile Include="Assets/Scripts/Manager/UIManager.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Minion.cs" />
     <Compile Include="Assets/Scripts/Command/ICommand.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/SkillController.cs" />
+    <Compile Include="Assets/Scripts/Entity/Entity.cs" />
     <Compile Include="Assets/Scripts/Command/Skill/SkillCommand.cs" />
     <Compile Include="Assets/Scripts/Inventory.cs" />
-    <Compile Include="Assets/Scripts/Unit/PlayableUnit.cs" />
+    <Compile Include="Assets/Scripts/Status/ChampStats.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Champions/ChampInfo.cs" />
+    <Compile Include="Assets/Scripts/Enums/EAbilityKeycode.cs" />
+    <Compile Include="Assets/Scripts/Enums/EResourceType.cs" />
     <Compile Include="Assets/Scripts/Controller/PlayerController.cs" />
     <Compile Include="Assets/Scripts/Command/Skill/SkillData.cs" />
     <Compile Include="Assets/Scripts/UnitStatus.cs" />
     <Compile Include="Assets/Scripts/Enums/UIType.cs" />
-    <Compile Include="Assets/Scripts/Unit/Player.cs" />
-    <Compile Include="Assets/Scripts/Enums/SkillCode.cs" />
-    <Compile Include="Assets/Scripts/Unit/Unit.cs" />
+    <Compile Include="Assets/Scripts/Enums/EAbilityCode.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Player.cs" />
+    <Compile Include="Assets/Scripts/Common/MonoBehaviourSingleton.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Champions/ChampStrategy.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Neutral.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Champions/Strategy/GarenStrategy.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Champions/Champion.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Champions/Abilities/AbilityInfo.cs" />
     <Compile Include="Assets/Scripts/Manager/SkillManager.cs" />
-    <Compile Include="Assets/Scripts/Enums/SkillPreviewType.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Nonneutral.cs" />
+    <Compile Include="Assets/Scripts/Entity/Unit/Unit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

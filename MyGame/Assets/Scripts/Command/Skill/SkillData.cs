@@ -15,7 +15,7 @@ public abstract class SkillData
     public int CoolDownTime{get;set;}
 
 
-    public bool execute(PlayableUnit hero)
+    public bool execute(SkillController hero)
     {
         if(check(hero)){
             run(hero);
@@ -24,7 +24,7 @@ public abstract class SkillData
         return false;
     }
 
-    public abstract void run(PlayableUnit unit);
+    public abstract void run(SkillController unit);
 
-    public abstract bool check(PlayableUnit unit);
+    public abstract bool check(SkillController unit);
 }
