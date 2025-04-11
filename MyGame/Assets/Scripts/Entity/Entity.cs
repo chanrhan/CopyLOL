@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Entity : MonoBehaviour
 {
+    [Header("Entity")]
     [SerializeField]
     protected UIType[] headUIBar;
     protected int hp;

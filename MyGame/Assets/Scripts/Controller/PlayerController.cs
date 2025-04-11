@@ -7,35 +7,42 @@ public class PlayerController : MonoBehaviour
 {
     private Champion champion;
     private Rigidbody champRigid;
-    private ChampStrategy strategy;
 
     private Dictionary<EAbilityKeycode, UnityAction> abilityActions;
 
-    public void SetChampion(ChampnInfo championInfo){
+    public void SetChampion(ChampInfo championInfo){
         champion = championInfo.championObject;
         champRigid = champion.GetComponent<Rigidbody>();
+    }
 
-        strategy = championInfo.strategy; 
+    void FixedUpdate()
+    {
+        
+    }
 
-        abilityActions = new Dictionary<EAbilityKeycode, UnityAction>(){
-            {EAbilityKeycode.Passive, strategy.UsePassiveAbility},
-            {EAbilityKeycode.Q, strategy.UseAbilityQ},
-            {EAbilityKeycode.W, strategy.UseAbilityW},
-            {EAbilityKeycode.E, strategy.UseAbilityE},
-            {EAbilityKeycode.R, strategy.UseAbilityR},
-        };
+    void Update()
+    {
+        if(Input.GetKey(KeyCode.Q)){
+            AbilityManager.Instance.UseAbility(KeyCode.Q);
+        }
+        if(Input.GetKey(KeyCode.W)){
+            AbilityManager.Instance.UseAbility(KeyCode.W);
+        }
+        if(Input.GetKey(KeyCode.E)){
+            AbilityManager.Instance.UseAbility(KeyCode.E);
+        }
+        if(Input.GetKey(KeyCode.R)){
+            AbilityManager.Instance.UseAbility(KeyCode.R);
+        }
     }
 
     public void MovePosition(){
-        strategy.Move();
+        
     }
 
     public void Attack(){
-        strategy.Attack();
+
     }
 
-    public void UseAbility(EAbilityKeycode abilityType){
-        abilityActions[abilityType].Invoke();
-    }
 
 }
