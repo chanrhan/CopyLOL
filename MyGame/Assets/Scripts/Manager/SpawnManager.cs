@@ -20,5 +20,6 @@ public class SpawnManager : MonobehaviourSingleton<SpawnManager>
         }
 
         GameObject go = Instantiate(champInfo.championObject.gameObject);
+        PlayerController.Instance.SetChampion(go);
     }
 }

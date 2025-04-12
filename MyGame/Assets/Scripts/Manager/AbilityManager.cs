@@ -19,15 +19,15 @@ public class AbilityManager : MonobehaviourSingleton<AbilityManager>
         {KeyCode.R, 4},
     };
 
-    private List<AbilityInfo> abilityInfo;
+    private AbilityContainer abilityContainer;
 
     public void Init(Champion champ){
-        abilityInfo = champ.AbilityInfos;
+        abilityContainer = champ.AbilityContainer;
         stats = champ.Stats;
     }
 
     public bool CanUseAbility(int idx){
-        AbilityInfo ab = abilityInfo[idx];
+        AbilityDetail ab = abilityContainer[idx];
 
         if(stats.resource < ab.GetResourceCost()){
             return false;
@@ -48,16 +48,16 @@ public class AbilityManager : MonobehaviourSingleton<AbilityManager>
 
         if(CanUseAbility(idx)){
             StartCoroutine(CooldownCoroutine(idx));
-            abilityInfo[idx].OnUseAbiliy();
+            abilityContainer[idx].OnUseAbiliy();
         }
     }
     
     public void IncreaseAbilityLevel(int abilityCode, int amount=1){
-        abilityInfo[abilityCode].IncreaseLevel(amount);
+        abilityContainer[abilityCode].IncreaseLevel(amount);
     }
 
     private IEnumerator CooldownCoroutine(int idx){
-        AbilityInfo ab = abilityInfo[idx];
+        AbilityDetail ab = abilityContainer[idx];
         ab.currCooldown = ab.GetCooldown();
         while(ab.currCooldown > 0){
             ab.currCooldown -= cooldownPerTime;

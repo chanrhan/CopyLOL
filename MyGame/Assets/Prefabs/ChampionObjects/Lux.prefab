@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4053093622026662852}
   - component: {fileID: 5408842881277447717}
   - component: {fileID: 4311277574206503537}
+  - component: {fileID: 184993565357876827}
   - component: {fileID: -1249013660549409767}
   m_Layer: 0
   m_Name: Lux
@@ -108,6 +109,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &184993565357876827
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708000474245247605}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!114 &-1249013660549409767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headUIBar: 
   stats:
-    level: 0
+    level: 1
+    moveSpeed: 300
     hp: 0
     resource: 0
     ad: 0
@@ -132,4 +161,6 @@ MonoBehaviour:
     mr: 0
     hr: 0
     ah: 0
-  abilityInfos: []
+  isMoving: 0
+  isAttacking: 0
+  isCasting: 0

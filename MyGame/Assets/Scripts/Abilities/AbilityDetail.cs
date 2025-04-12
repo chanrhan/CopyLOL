@@ -4,16 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class AbilityInfo 
+public class AbilityDetail 
 {
-    public int lev;
+    public int lev = 0;
     public int[] resourceCost;
 
     public float currCooldown;
     public float[] cooldown;
 
+    public AbilityPreview[] previews = new AbilityPreview[1];
+
     public Action OnUseAbiliy;
     public Func<bool> CanUseAbility;
+
+    public AbilityDetail(){
+        
+    }
 
     public void IncreaseLevel(int amount=1){
         if(lev + amount > 5){

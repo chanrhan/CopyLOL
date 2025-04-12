@@ -6,7 +6,12 @@ using UnityEngine;
 [Serializable]
 public class UnitStats
 {
-    public int level;
+    public int level = 1;
+    [SerializeField]
+    private int moveSpeed = 300;
+    public float MoveSpeed{
+        get=> moveSpeed / 100;
+    }
     public int hp;
     public int resource;
     public int ad; // Attack Damage

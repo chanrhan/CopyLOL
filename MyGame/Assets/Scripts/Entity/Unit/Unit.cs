@@ -7,6 +7,9 @@ public abstract class Unit : Entity {
     public UnitStats Stats{
         get=>stats;
     }
+
+    public bool isMoving;
+    public bool isAttacking;
     
     public virtual int OnDamaged(int amount){
         hp -= amount;

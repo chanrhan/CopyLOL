@@ -7,30 +7,31 @@ using UnityEngine.Events;
 public abstract class Champion : Nonneutral
 {
     [Header("Champion")]
-    private List<AbilityInfo> abilityInfos = new List<AbilityInfo>(5);
+    private AbilityContainer abilityContainer = new AbilityContainer();
 
-    public List<AbilityInfo> AbilityInfos{
-        get=>abilityInfos;
+    public AbilityContainer AbilityContainer{
+        get=>abilityContainer;
     }
 
     protected string champName;
 
+    [Header("Player State")]
+    
+    public bool isCasting;
+
     protected override void Awake()
     {
         base.Awake();
-        if(abilityInfos.Count < 5){
-            throw new Exception($"{champName} : 스킬을 등록해주세요!");
-        }
 
-        abilityInfos[1].OnUseAbiliy = UseAbility1;
-        abilityInfos[2].OnUseAbiliy = UseAbility2;
-        abilityInfos[3].OnUseAbiliy = UseAbility3;
-        abilityInfos[4].OnUseAbiliy = UseAbility4;
+        abilityContainer[1].OnUseAbiliy = UseAbility1;
+        abilityContainer[2].OnUseAbiliy = UseAbility2;
+        abilityContainer[3].OnUseAbiliy = UseAbility3;
+        abilityContainer[4].OnUseAbiliy = UseAbility4;
 
-        abilityInfos[1].CanUseAbility = CanAbility1;
-        abilityInfos[2].CanUseAbility = CanAbility2;
-        abilityInfos[3].CanUseAbility = CanAbility3;
-        abilityInfos[4].CanUseAbility = CanAbility4;
+        abilityContainer[1].CanUseAbility = CanAbility1;
+        abilityContainer[2].CanUseAbility = CanAbility2;
+        abilityContainer[3].CanUseAbility = CanAbility3;
+        abilityContainer[4].CanUseAbility = CanAbility4;
     }
 
     protected override void LevelUp(){
